@@ -1,0 +1,128 @@
+/* ---------- RESET ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- PAGE ---------- */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f7971e);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+    color: #ffffff;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- SEARCH ---------- */
+#searchBox {
+    width: 360px;
+    height: 48px;
+    font-size: 17px;
+    padding: 0 16px;
+    border-radius: 14px;
+    border: none;
+    background: rgba(255,255,255,0.95);
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* ---------- PHOTO BOX ---------- */
+.photo-box {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ---------- BIG HERO IMAGE ---------- */
+#photo {
+    width: 90%;
+    max-width: 700px;        /* caps on ultra-wide screens */
+    aspect-ratio: 3 / 4;    /* portrait look */
+    height: auto;
+    object-fit: cover;
+    border-radius: 28px;
+    border: 6px solid rgba(255,255,255,0.9);
+    display: none;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+#photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 40px 90px rgba(0,0,0,0.7);
+}
+
+/* ---------- INFO BOX ---------- */
+.info-box {
+    width: 50%;
+    padding: 35px;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+}
+
+/* ---------- TITLES ---------- */
+.title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* ---------- INFO TEXT ---------- */
+.info-box p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f9fafb;
+}
+
+/* ---------- GOLD FRAME ---------- */
+.photo-james {
+    border: 8px solid gold !important;
+    box-shadow: 0 0 70px rgba(255,215,0,1);
+}
+
+/* ---------- BLUE NEON FRAME ---------- */
+.photo-james-blue {
+    border: 8px solid #38bdf8 !important;
+    box-shadow: 
+        0 0 60px #38bdf8,
+        0 0 120px #0ea5e9;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .photo-box,
+    .info-box {
+        width: 100%;
+    }
+
+    #photo {
+        width: 100%;
+        max-width: 100%;
+    }
+}
